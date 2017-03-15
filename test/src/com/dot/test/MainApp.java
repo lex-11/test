@@ -20,7 +20,9 @@ public class MainApp extends JFrame implements ActionListener{
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		new MainApp();
+
 	}
 
 	public MainApp() throws HeadlessException {
