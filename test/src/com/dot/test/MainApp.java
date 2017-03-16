@@ -27,6 +27,7 @@ public class MainApp extends JFrame implements ActionListener{
 
 	public MainApp() throws HeadlessException {
 		
+
 		Car car = new Car();
 		CareTaker careTaker = new CareTaker();
 		car.setState(new State("STOP"));
@@ -41,6 +42,13 @@ public class MainApp extends JFrame implements ActionListener{
 		car.restoreFromMemento(careTaker.restoreFromMemento());
 		car.restoreFromMemento(careTaker.restoreFromMemento());
 		car.restoreFromMemento(careTaker.restoreFromMemento());
+		
+		Observer obs = new Observer();
+		ObservableModel model = new ObservableModel();
+		model.registerObserver(obs);
+		
+		model.sendData("DATA");	
+
 		
 		
 		
