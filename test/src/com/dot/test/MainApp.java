@@ -26,6 +26,17 @@ public class MainApp extends JFrame implements ActionListener{
 	}
 
 	public MainApp() throws HeadlessException {
+		
+		
+		Observer obs = new Observer();
+		ObservableModel model = new ObservableModel();
+		model.registerObserver(obs);
+		
+		model.sendData("DATA");	
+		
+		
+		
+		
 		JPanel panel = new JPanel();
 		AddCarButton button1 = new AddCarButton();
 		button1.addActionListener(this);
