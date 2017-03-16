@@ -26,6 +26,25 @@ public class MainApp extends JFrame implements ActionListener{
 	}
 
 	public MainApp() throws HeadlessException {
+		
+		Car car = new Car();
+		CareTaker careTaker = new CareTaker();
+		car.setState(new State("STOP"));
+		careTaker.saveTomemento(car.saveToMemento());
+		
+		car.setState(new State("RUN SLOW"));
+		careTaker.saveTomemento(car.saveToMemento());
+		
+		car.setState(new State("RUN FAST"));
+		careTaker.saveTomemento(car.saveToMemento());
+		
+		car.restoreFromMemento(careTaker.restoreFromMemento());
+		car.restoreFromMemento(careTaker.restoreFromMemento());
+		car.restoreFromMemento(careTaker.restoreFromMemento());
+		
+		
+		
+		
 		JPanel panel = new JPanel();
 		AddCarButton button1 = new AddCarButton();
 		button1.addActionListener(this);
